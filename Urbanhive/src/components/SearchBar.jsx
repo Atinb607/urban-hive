@@ -27,8 +27,13 @@ const SearchBar = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="search-bar-container flex items-center border border-gray-300 rounded-full px-3 py-1 bg-white shadow-md"
-      style={{ padding: '4px 10px' }} // extra safety for smaller padding
+      className="search-bar-container flex items-center border border-gray-300 rounded-full bg-white shadow-md"
+      style={{
+        padding: '4px 10px',       // small padding inside
+        width: '60%',              // reduced width (you can tweak to 50/40)
+        maxWidth: '500px',         // prevents too wide on large screens
+        margin: '8px auto',        // space above & below, center horizontally
+      }}
     >
       <input
         type="text"
@@ -44,8 +49,6 @@ const SearchBar = () => {
           className="w-4 h-4 opacity-70 hover:opacity-100"
         />
       </button>
-
-      {/* Close button */}
       <button
         type="button"
         onClick={() => {
