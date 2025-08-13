@@ -17,7 +17,7 @@ const MyProfile = () => {
       try {
         const res = await fetch('/api/user/profile', {
           headers: {
-            'Authorization': `Bearer ${token}`,
+            'token': token
           },
         });
         if (!res.ok) throw new Error('Failed to fetch');
